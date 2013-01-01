@@ -69,10 +69,10 @@
 
 <?php
 
-define ('HOSTNAME', "localhost");
-define ('USERNAME', '');
-define ('PASSWORD', '%6kv2');
-define ('DATABASE_NAME', '');
+define( 'HOSTNAME', 'localhost' );
+define( 'USERNAME', '' );
+define( 'PASSWORD', '' );
+define( 'DATABASE_NAME', '' );
 
 $db = mysql_connect(HOSTNAME, USERNAME, PASSWORD) or die ("Cannot connect.");
 
