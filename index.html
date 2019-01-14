@@ -8,13 +8,37 @@
   <meta name="description" content="How people define digital humanities." />
   <meta name="author" content="Jason A. Heppler" />
   <meta name="keywords" content="digital history, digital humanities" />
-  <meta name="copyright" content="Copyright (c) 2014 Jason Hepler" />
+  <meta name="copyright" content="Copyright (c) 2017 Jason Hepler" />
   <title>What Is Digital Humanities?</title>
 
   <script src="lib/underscore-min.js"></script>
   <script src="lib/d3.v3.min.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/normalize.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+    <!-- RDFa Metadata (in OpenGraph) -->
+  <meta property="og:title" content="" />
+  <meta property="og:author" content="http://whatisdigitalhumanities.com" />
+  <meta property="og:site_name" content="What is Digital Humanities" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Scholar Metadata -->
+  <meta name="citation_author" content="Jason A. Heppler"/>
+  <meta name="citation_date" content="2017-03-08 14:20:40 -0600"/>
+  <meta name="citation_title" content=""/>
+  <meta name="citation_journal_title" content="What is Digital Humanities"/>
+
+
+  <!-- Twitter cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@jaheppler">
+  <meta name="twitter:creator" content="@jaheppler">
+  <meta name="twitter:url" content="http://whatisdigitalhumanities.com">
+  <meta name="twitter:title" content="What is Digital Humanities">
+  <meta name="twitter:description" content="Perpetual answers to the perpetual question.">
 
   <style type="text/css">
   body {
@@ -22,6 +46,16 @@
     background: #fff;
     line-height: 16px;
     margin: 40px;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  h1 {
+    font-family: "Fira Sans", sans-serif;
+  }
+  .title {
+    background: black;
+    color: white;
+    padding: 3px;
   }
 
   #content {
@@ -37,14 +71,14 @@
   }
 
   text.quote_text {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 28px;
   }
 
   text.quote_source {
     font-size: 15px;
     line-height: 52px;
-    font-variant: small-caps;
+    font-style: italic;
     float: right;
   }
 </style>
@@ -52,7 +86,7 @@
 </head>
 <body>
 
-  <h1>What Is Digital Humanities?</h1>
+  <h1><span class="title">What Is Digital Humanities?</span></h1>
 
   <div id="content">
     <div class="row">
@@ -70,9 +104,21 @@
 
   <script>
   d3.csv("dayofquotes_full.csv", function(error, quotes) {
+    if (error) throw error;
+
+    updateText(quotes);
+
+  });
+
+  function randomDraw(random) {
+    sampled = _.sample(random,1);
+    return sampled;
+  }
+
+  function updateText(data) {
 
     // Grab random line from CSV
-    randomQuote = randomDraw(quotes);
+    randomQuote = randomDraw(data);
 
     var svg = d3.select("#quote_text");
 
@@ -82,18 +128,13 @@
 
     texts.append("text")
       .attr("class", "quote_text")
-      .text(function(d) { return d.quote; })
+      .text(function(d) { return d.quote; });
 
     texts.append("text")
       .attr("class", "quote_source")
-      .text(function(d) { return " " + d.name; })
-
-  });
-
-  function randomDraw(random) {
-    sampled = _.sample(random,1);
-    return sampled;
+      .text(function(d) { return " " + d.name; });
   }
+
   </script>
 
 </body>
