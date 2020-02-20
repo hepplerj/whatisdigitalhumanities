@@ -103,37 +103,27 @@
   </div>
 
   <script>
-  d3.csv("dayofquotes_full.csv", function(error, quotes) {
+  d3.csv("dayofquotes_full.csv", (error, quotes) => {
     if (error) throw error;
-
-    updateText(quotes);
-
-  });
-
-  function randomDraw(random) {
-    sampled = _.sample(random,1);
-    return sampled;
-  }
-
-  function updateText(data) {
-
+    
     // Grab random line from CSV
-    randomQuote = randomDraw(data);
+    randomQuote = _.sample(quotes, 1);
 
-    var svg = d3.select("#quote_text");
+    // Result to DOM
+    const svg = d3.select("#quote_text");
 
-    var texts = svg.selectAll("text")
+    const texts = svg.selectAll("text")
       .data(randomQuote)
       .enter();
 
     texts.append("text")
       .attr("class", "quote_text")
-      .text(function(d) { return d.quote; });
+      .text(d => d.quote );
 
     texts.append("text")
       .attr("class", "quote_source")
-      .text(function(d) { return " " + d.name; });
-  }
+      .text(d => " " + d.name );
+  });
 
   </script>
 
