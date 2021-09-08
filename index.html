@@ -49,40 +49,22 @@
   <h1><span class="title">What Is Digital Humanities?</span></h1>
 
   <div id="content">
-    <p id="quote_text"></p>
-    <p id="quote_source"></p>
+    <p id="quote_text">
+      A program that focuses on digital textual editing, archiving, and publishing, and on the study of new media and
+      computing platforms from the perspectives of the humanities and computer science. Includes instruction in
+      archiving, computer programming, cultural studies, and textual criticism.
+    </p>
+    
+    <p id="quote_source">
+      <a href=https://nces.ed.gov/ipeds/cipcode/cipdetail.aspx?y=56&cipid=91740>National Center for education statistics.
+    </p>
 
     <hr>
-
-    <p class="notes"><strong>NB</strong>: Refresh the page to get a new definition. Quotes were pulled from participants from the <a href="http://twitter.com/DayofDH">Day of DH</a> between 2009-2014. As of January 2015, the database contains 817 rows and randomly selects a quote each time the page is loaded. If you want to do something cool with the data, I am providing the code and data <a href="http://github.com/hepplerj/whatisdigitalhumanities">here</a>.</p>
 
     <p class="notes">Made by <a href="http://jasonheppler.org">Jason Heppler</a>. Problems? Questions? I'm <a href="http://twitter.com/jaheppler">@jaheppler</a> on Twitter.</p>
 
   </div>
 
-  <script>
-  d3.csv("dayofquotes_full.csv", (error, quotes) => {
-    if (error) throw error;
-    
-    // Grab random line from CSV
-    randomQuote = _.sample(quotes, 1);
-
-    // Result to DOM
-    const svg = d3.select("#quote_text");
-
-    const texts = svg.selectAll("text")
-      .data(randomQuote)
-      .enter();
-
-    texts.append("text")
-      .attr("class", "quote_text")
-      .text(d => d.quote );
-
-    texts.append("text")
-      .attr("class", "quote_source")
-      .text(d => " " + d.name );
-  });
-  </script>
 
 </body>
 </html>
