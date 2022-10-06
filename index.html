@@ -40,8 +40,24 @@
   <meta name="twitter:description" content="Perpetual answers to the perpetual question.">
 
   <style type="text/css">
-  :root{--background:#fff;--text:#111;--link:#000;--link-alt:#333;--syn-comment:#999988;--syn-emph:#000;--syn-type:#445588;--syn-error:#a61717;--syn-number:#007f7f;--syn-string:#d01040;--syn-label:#900;--syn-variable:#008080;--syn-oct:#099;--syn-other:#d01040;--type-base:calc(1.6em + 0.5vw);--type-xxx-small:55%;--type-xx-small:65%;--type-x-small:75%;--type-small:85%;--type-medium:90%;--type-large:125%;--type-x-large:150%;--type-xx-large:230%;--type-xxx-large:340%;--mono-font:San Francisco Mono,Monaco,"Consolas","Lucida Console","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;--sans-font:-apple-system,BlinkMacSystemFont,'avenir next',avenir,helvetica,'helvetica neue',ubuntu,roboto,noto,'segoe ui',arial,sans-serif}[data-theme=dark]{--background:#111;--text:#eee;--link:#f7f7f7;--link-alt:#f2f2f2;--syn-comment:#999988;--syn-emph:#fff;--syn-type:#79f;--syn-error:#faf;--syn-number:#5fc;--syn-string:#f05;--syn-label:#f66;--syn-variable:#0f4;--syn-oct:#3ff;--syn-other:#f69}#darkModeToggle{position:absolute;left:-16px;top:5px;background:0 0;border:none;padding:0;margin:0;cursor:pointer}#darkModeToggle:focus{outline:0}#darkModeToggle svg{background:var(--background);fill:var(--text)}body[data-theme=dark] svg{background:#fff;color:#222}body{background-color:var(--background);color:var(--text);margin:30px auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.6;font-size:1rem;font-family:var(--sans-font)}.only-print{display:none}a{color:var(--link);text-decoration-skip-ink:auto;text-decoration:underline}a:visited{color:var(--link-alt)}ul{margin:1rem 0}ul ul{margin:0}.small,small{font-size:14px}h1 a{color:var(--link)}em{font-style:italic}h1{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:32px;letter-spacing:.004em}h2{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:1.5rem;letter-spacing:.009em}h3{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:1.25rem;letter-spacing:.009em}h4{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:1rem}h5{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:.875rem}::-webkit-details-marker{display:none}.body th{text-align:left}.body th{padding:.5rem}.limiter{max-width:640px;padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto}.pad1{padding:10px}.pad0x{padding-left:0;padding-right:0}.pad1y{padding-top:10px;padding-bottom:10px}.pad2y{padding-top:20px;padding-bottom:20px}.update{background:#fffceb;padding:1rem 1rem 0 1rem;border:1px solid #fbf1a9;border-radius:2px}@media screen and (max-width:1024px){.header-wrap{border-bottom:1px solid var(--text);padding-bottom:20px}}@media screen and (min-width:1025px){.header{position:absolute;top:55px;right:50%;margin-right:340px!important;letter-spacing:-.009em}.content h1:first-child{margin-top:0}}@media print{.no-print{display:none}.only-print{display:block}body{margin:0}.limiter{max-width:100%!important;margin:0!important;padding:0!important}}.code,li code{font-family:var(--mono-font)}.m{color:var(--syn-number)}.s{color:var(--syn-string)}.no{color:var(--syn-label)}.k{color:var(--syn-variable)}.s1,.s2{color:var(--syn-other)}body{display:block;color:var(--text);background:var(--background);margin:40px auto;width:800px;font-family:var(--sans-font)}h1{font-family:"Fira Sans",sans-serif;font-size:var(--type-xx-large)}.title{background:var(--text);color:#fff;padding:3px}.notes{font-size:var(--type-x-small);color:var(--syn-type);padding-top:15px}text.quote_text{font-size:var(--type-x-large)}text.quote_source{font-size:var(--type-small);font-style:italic}hr{display:block;height:1px;border:0;border-top:2px solid var(--syn-type);margin:1em 0;padding:0;clear:both}
+  @font-face {
+    font-family: 'Changa';
+    src: url('lib/fonts/Changa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Nunito';
+    src: url('lib/fonts/Nunito-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  :root{--background:#fff;--text:#111;--link:#000;--link-alt:#333;--syn-comment:#999988;--syn-emph:#000;--syn-type:#445588;--syn-error:#a61717;--syn-number:#007f7f;--syn-string:#d01040;--syn-label:#900;--syn-variable:#008080;--syn-oct:#099;--syn-other:#d01040;--type-base:calc(1.6em + 0.5vw);--type-xxx-small:55%;--type-xx-small:65%;--type-x-small:75%;--type-small:85%;--type-medium:90%;--type-large:125%;--type-x-large:150%;--type-xx-large:230%;--type-xxx-large:340%;--mono-font:San Francisco Mono,Monaco,"Consolas","Lucida Console","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;--sans-font:Nunito,-apple-system,BlinkMacSystemFont,'avenir next',avenir,helvetica,'helvetica neue',ubuntu,roboto,noto,'segoe ui',arial,sans-serif}[data-theme=dark]{--background:#111;--text:#eee;--link:#f7f7f7;--link-alt:#f2f2f2;--syn-comment:#999988;--syn-emph:#fff;--syn-type:#79f;--syn-error:#faf;--syn-number:#5fc;--syn-string:#f05;--syn-label:#f66;--syn-variable:#0f4;--syn-oct:#3ff;--syn-other:#f69}#darkModeToggle{position:absolute;left:-16px;top:5px;background:0 0;border:none;padding:0;margin:0;cursor:pointer}#darkModeToggle:focus{outline:0}#darkModeToggle svg{background:var(--background);fill:var(--text)}body[data-theme=dark] svg{background:#fff;color:#222}body{background-color:var(--background);color:var(--text);margin:30px auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.6;font-size:1rem;font-family:var(--sans-font)}.only-print{display:none}a{color:var(--link);text-decoration-skip-ink:auto;text-decoration:underline}a:visited{color:var(--link-alt)}ul{margin:1rem 0}ul ul{margin:0}.small,small{font-size:14px}h1 a{color:var(--link)}em{font-style:italic}h1{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:32px;letter-spacing:.004em}h2{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:1.5rem;letter-spacing:.009em}h3{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:1.25rem;letter-spacing:.009em}h4{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:1rem}h5{margin-bottom:.5rem;line-height:1.25;font-weight:600;font-size:.875rem}::-webkit-details-marker{display:none}.body th{text-align:left}.body th{padding:.5rem}.limiter{max-width:640px;padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto}.pad1{padding:10px}.pad0x{padding-left:0;padding-right:0}.pad1y{padding-top:10px;padding-bottom:10px}.pad2y{padding-top:20px;padding-bottom:20px}.update{background:#fffceb;padding:1rem 1rem 0 1rem;border:1px solid #fbf1a9;border-radius:2px}@media screen and (max-width:1024px){.header-wrap{border-bottom:1px solid var(--text);padding-bottom:20px}}@media screen and (min-width:1025px){.header{position:absolute;top:55px;right:50%;margin-right:340px!important;letter-spacing:-.009em}.content h1:first-child{margin-top:0}}@media print{.no-print{display:none}.only-print{display:block}body{margin:0}.limiter{max-width:100%!important;margin:0!important;padding:0!important}}.code,li code{font-family:var(--mono-font)}.m{color:var(--syn-number)}.s{color:var(--syn-string)}.no{color:var(--syn-label)}.k{color:var(--syn-variable)}.s1,.s2{color:var(--syn-other)}body{display:block;color:var(--text);background:var(--background);margin:40px auto;width:800px;font-family:var(--sans-font)}h1{font-family:"Fira Sans",sans-serif;font-size:var(--type-xx-large)}.title{font-family: Changa, var(--sans-font);background:var(--text);color:#fff;padding:3px}.notes{font-size:var(--type-small);color:var(--syn-type);padding-top:15px}text.quote_text{font-size:var(--type-large)}text.quote_source{font-size:var(--type-large);font-weight:800;color:rgb(255 61 61)!important}hr{display:block;height:1px;border:0;border-top:2px solid var(--syn-type);margin:1em 0;padding:0;clear:both}
+  button {font-size: var(--type-large); background-color: var(--background); border: 2px solid var(--link); color: var(--link);}
+  button:hover {background-color: var(--link); border: 2px solid var(--link); color: var(--background);}
   </style>
+
+  <script defer data-domain="whatisdigitalhumanities.com" src="https://plausible.io/js/plausible.js"></script>
 
 </head>
 <body data-theme>
@@ -49,12 +65,13 @@
   <h1><span class="title">What Is Digital Humanities?</span></h1>
 
   <div id="content">
+    <button id="update_quote">New quote</button>
     <p id="quote_text"></p>
     <p id="quote_source"></p>
 
     <hr>
 
-    <p class="notes"><strong>NB</strong>: Refresh the page to get a new definition. Quotes were pulled from participants from the <a href="http://twitter.com/DayofDH">Day of DH</a> between 2009-2014. As of January 2015, the database contains 817 rows and randomly selects a quote each time the page is loaded. If you want to do something cool with the data, I am providing the code and data <a href="http://github.com/hepplerj/whatisdigitalhumanities">here</a>.</p>
+    <p class="notes"><strong>NB</strong>: Click the <span style="border-bottom: 1px solid #000;">New quote</span> button to display a new random quote. Quotes were pulled from participants from the <a href="http://twitter.com/DayofDH">Day of DH</a> between 2009-2014. As of January 2015, the database contains 817 rows and randomly selects a quote each time the page is loaded. If you want to do something cool with the data, I am providing the code and data <a href="http://github.com/hepplerj/whatisdigitalhumanities">here</a>.</p>
 
     <p class="notes">Made by <a href="http://jasonheppler.org">Jason Heppler</a>. Problems? Questions? I'm <a href="http://twitter.com/jaheppler">@jaheppler</a> on Twitter.</p>
 
@@ -81,6 +98,13 @@
     texts.append("text")
       .attr("class", "quote_source")
       .text(d => " " + d.name );
+    
+    // Update the quote when the `update_quote` button is clicked
+    d3.select("#update_quote").on("click", () => {
+      randomQuote = _.sample(quotes, 1);
+      d3.select(".quote_text").text(d => randomQuote[0].quote);
+      d3.select(".quote_source").text(d => " " + randomQuote[0].name);
+    });
   });
   </script>
 
